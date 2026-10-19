@@ -1,0 +1,54 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-forest: #1f3d2b;
+  --color-forest-2: #2b5239;
+  --color-forest-3: #16291d;
+  --color-leaf: #4f7d4a;
+  --color-sage: #dfe8d6;
+  --color-sage-2: #eef3e9;
+  --color-cream: #faf6ee;
+  --color-paper: #fffdf8;
+  --color-clay: #c8623a;
+  --color-clay-dk: #a94e2b;
+  --color-sun: #e9b949;
+  --color-ink: #1c241e;
+  --color-muted: #5b665d;
+  --color-line: #e4e0d4;
+
+  --font-serif: 'Fraunces Variable', Georgia, serif;
+  --font-sans: 'Inter Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 84px;
+  }
+  body {
+    @apply bg-cream font-sans text-[16px] leading-relaxed text-ink antialiased sm:text-[17px];
+  }
+  h1, h2, h3 {
+    @apply font-serif font-semibold leading-[1.12] tracking-[-0.01em] text-forest;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-clay;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition: none !important; }
+  }
+}
+
+@layer components {
+  .wrap { @apply mx-auto max-w-[1160px] px-[18px] sm:px-6; }
+  .eyebrow { @apply text-[13px] font-semibold uppercase tracking-[0.14em] text-clay; }
+  .h2 { @apply text-[clamp(30px,4vw,44px)]; }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2.5 whitespace-nowrap rounded-full px-[22px] py-3.5 text-base font-semibold no-underline transition;
+  }
+  .btn-primary { @apply bg-clay text-white shadow-[0_6px_18px_-6px_rgba(200,98,58,.6)] hover:-translate-y-px hover:bg-clay-dk; }
+  .btn-ghost { @apply border-[1.5px] border-white/50 text-white hover:bg-white/10; }
+  .btn-dark { @apply bg-forest text-white hover:bg-forest-2; }
+  .section { @apply py-16 sm:py-24; }
+}
