@@ -52,7 +52,11 @@
     </div>
     <div class="mt-11 flex flex-wrap justify-between gap-4 border-t border-white/[.08] pt-[22px]">
       <span>© {year} {business.name}</span>
-      <span>Site by SoftMarmot</span>
+      <span
+        >Developed by <a href="https://softmarmot.com" class="font-semibold text-white/80 hover:text-white" target="_blank" rel="noopener"
+          >SoftMarmot</a
+        ></span
+      >
     </div>
   </div>
 </footer>
